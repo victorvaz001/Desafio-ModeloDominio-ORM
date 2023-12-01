@@ -18,6 +18,10 @@ public class Atividade {
     private Double price;
 
 
+    @ManyToOne
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
+
     public Atividade(){
     }
 
