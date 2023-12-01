@@ -19,13 +19,19 @@ public class Bloco {
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant fim;
 
+
+    @OneToOne
+    @MapsId
+    private Atividade atividade;
+
     public Bloco (){
     }
 
-    public Bloco(Long id, Instant inicio, Instant fim) {
+    public Bloco(Long id, Instant inicio, Instant fim, Atividade atividade) {
         this.id = id;
         this.inicio = inicio;
         this.fim = fim;
+        this.atividade = atividade;
     }
 
     public Long getId() {
