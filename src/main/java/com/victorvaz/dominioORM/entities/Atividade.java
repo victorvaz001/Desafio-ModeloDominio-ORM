@@ -25,6 +25,13 @@ public class Atividade {
     public Atividade(){
     }
 
+    public Atividade(Long id, String name, String descricao, Double price, Categoria categoria) {
+        this.id = id;
+        this.name = name;
+        this.descricao = descricao;
+        this.price = price;
+        this.categoria = categoria;
+    }
 
     public Long getId() {
         return id;
@@ -56,6 +63,14 @@ public class Atividade {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     @Override
