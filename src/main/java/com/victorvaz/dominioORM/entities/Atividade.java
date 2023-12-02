@@ -1,5 +1,6 @@
 package com.victorvaz.dominioORM.entities;
 
+import com.victorvaz.dominioORM.Bloco;
 import jakarta.persistence.*;
 
 import java.util.*;
@@ -20,6 +21,10 @@ public class Atividade {
     @ManyToOne
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
+
+
+    @OneToMany(mappedBy = "atividade")
+    private List<Bloco> blocos = new ArrayList<>();
 
     public Atividade(){
     }
