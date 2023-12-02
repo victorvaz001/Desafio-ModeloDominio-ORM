@@ -11,28 +11,24 @@ public class Atividade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String nome;
 
     @Column(columnDefinition = "TEXT")
     private String descricao;
-    private Double price;
-
+    private Double preco;
 
     @ManyToOne
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
-    @OneToMany(mappedBy = "atividade")
-    private List<Bloco> blocos = new ArrayList<>();
-
     public Atividade(){
     }
 
-    public Atividade(Long id, String name, String descricao, Double price, Categoria categoria) {
+    public Atividade(Long id, String nome, String descricao, Double preco, Categoria categoria) {
         this.id = id;
-        this.name = name;
+        this.nome = nome;
         this.descricao = descricao;
-        this.price = price;
+        this.preco = preco;
         this.categoria = categoria;
     }
 
@@ -44,12 +40,12 @@ public class Atividade {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getDescricao() {
@@ -60,12 +56,12 @@ public class Atividade {
         this.descricao = descricao;
     }
 
-    public Double getPrice() {
-        return price;
+    public Double getPreco() {
+        return preco;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setPreco(Double preco) {
+        this.preco = preco;
     }
 
     public Categoria getCategoria() {
@@ -75,6 +71,7 @@ public class Atividade {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -90,4 +87,6 @@ public class Atividade {
     public int hashCode() {
         return id != null ? id.hashCode() : 0;
     }
+
+
 }
